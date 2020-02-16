@@ -1,0 +1,26 @@
+# 忽略所有文件和文件夹
+/*
+/*/
+# 要保存的配置文件
+!/.gitignore
+!/alacritty/
+!/fish/
+!i3/
+!/i3blocks/
+!/neofetch/
+!/mpd
+/mpd/playlists
+/mpd/database
+/mpd/log
+/mpd/pid
+/mpd/state
+/mpd/sticker.sql
+!/ncmpcpp/
+/ncmpcpp/error.log
+!/omf/
+!/polybar/
+!/ranger/
+/ranger/plugins/__pycache__/*
+!/redshift/
+!/rofi/
+!/compton.conf

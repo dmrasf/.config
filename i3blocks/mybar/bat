@@ -1,0 +1,18 @@
+#!/bin/bash
+
+bat() {
+    BAT_N=$(acpi -b | awk '{ print $3}' | sed 's/,//')
+    BAT=$(acpi -b | awk '{ print $4}' | sed 's/,//')
+    case $BAT_N in
+    Discharging)
+        echo  $BAT ;;
+    Charging)
+        echo  $BAT ;;
+    Full)
+        echo  $BAT ;;
+    *)
+        echo  $BAT ;;
+    esac
+}
+
+bat

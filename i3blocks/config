@@ -1,0 +1,32 @@
+command=~/.config/i3blocks/mybar/$BLOCK_NAME
+separator_block_width=30
+markup=pango
+
+[net]
+interval=5
+
+[music]
+interval=2
+
+[audio]
+interval=2
+
+[bat]
+interval=10
+
+[mem]
+interval=10
+
+# [cpu_temp]
+# interval=10
+
+[disk]
+interval=30
+
+[clock]
+interval=20
+
+[shutdown_menu]
+full_text= 
+command=~/.config/i3blocks/mybar/shutdown_menu
+ROFI_OPTIONS=-width 11 -location 5 -hide-scrollbar -bw 2

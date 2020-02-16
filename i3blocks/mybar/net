@@ -1,0 +1,41 @@
+#!/bin/bash
+
+net() {
+    ISCON=$(nmcli -a | awk '/^wlp3s0:/ {print $4}')
+    
+    if [ -z "$ISCON" ]; then
+        echo 
+    else
+        echo $ISCON $(netspeed)
+    fi
+}
+netspeed() {
+    RX_pre=$(cat /proc/net/dev | awk '/wlp3s0:/ { print $2 }')
+    TX_pre=$(cat /proc/net/dev | awk '/wlp3s0:/ { print $10 }')
+    sleep 1
+    RX_next=$(cat /proc/net/dev | awk '/wlp3s0:/ { print $2 }')
+    TX_next=$(cat /proc/net/dev | awk '/wlp3s0:/ { print $10 }')
+    
+    RX=$((${RX_next}-${RX_pre}))
+    TX=$((${TX_next}-${TX_pre}))
+    
+    if [[ $RX -lt 1024 ]]; then
+        RX="${RX}B"
+    elif [[ $RX -gt 1048576 ]]; then
+        RX=$(echo $RX | awk '{ printf("%.1fMB",$1/1048576) }')
+    else
+        RX=$(echo $RX | awk '{ printf("%.1fKB",$1/1024) }')
+    fi
+     
+    if [[ $TX -lt 1024 ]]; then
+        TX="${TX}B"
+    elif [[ $TX -gt 1048576 ]]; then
+        TX=$(echo $TX | awk '{ printf("%.1fMB",$1/1048576) }')
+    else
+        TX=$(echo $TX | awk '{ printf("%.1fKB",$1/1024) }')
+    fi
+    
+    echo  $RX  $TX
+}
+
+net

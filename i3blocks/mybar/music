@@ -1,0 +1,44 @@
+#!/bin/bash
+
+PP=$(mpc | awk '/\[p/ {print $1}' | sed -e 's/\[//; s/\]//')
+music() {
+    case $PP in
+        paused)
+            echo  $(mpc | sed -n '1p') ;;
+        playing)
+            echo  $(mpc | sed -n '1p') ;;
+        *)
+            echo ﱙ ;;
+    esac
+}
+
+pause() {
+    case $PP in
+        paused)
+            mpc play ;;
+        playing)
+            mpc pause ;;
+        *)
+            ;;
+    esac
+}
+
+mpdpp(){
+    case $PP in
+        paused)
+            killall mpd ;;
+        playing)
+            killall mpd ;;
+        *)
+            mpd ;;
+    esac
+}
+
+case $BLOCK_BUTTON in
+    1) pause music ;;
+    #2) $(st ncmpcpp &) ;;
+    3) mpdpp music;;
+    4) music $(mpc prev) ;;
+    5) music $(mpc next) ;;
+    *) music ;;
+esac

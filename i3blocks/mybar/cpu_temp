@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo  $(sensors | awk '/Core 0/ {print $3}')
+echo  $(sensors | awk '/Core 1/ {print $3}')
+echo  $(sensors | awk '/Core 2/ {print $3}')
+echo  $(sensors | awk '/Core 3/ {print $3}')

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LAN=$(echo $LANG)
+
+if [ $LAN = "zh_CN.UTF-8" ]; then
+    echo  $(free -h | awk '/内存：/ {print $3 "/" $2}' | sed 's/i//g')
+else
+    echo  $(free -h | awk '/^Mem:/ {print $3 "/" $2}' | sed 's/i//g')
+fi
