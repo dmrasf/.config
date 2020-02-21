@@ -34,7 +34,7 @@ magenta = ${xrdb:color13:#d3869b}
 cyan = ${xrdb:color14:#8ec07c}
 white = ${xrdb:color15:#ebdbb2}
 ; 修改前两个数字改变透明度
-background = ${xrdb:color256:#cc1d2021}
+background = ${xrdb:color256:#aa1d2021}
 foreground = ${xrdb:color257:#ebdbb2}
 
 [bar/default]
