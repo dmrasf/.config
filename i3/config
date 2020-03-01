@@ -220,4 +220,4 @@ default_floating_border none
     #tray_output none
 #}
 #
-gaps inner 0
+gaps inner 8
