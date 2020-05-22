@@ -15,8 +15,6 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:SourceCodePro 13
 
-exec_always --no-startup-id $HOME/.config/polybar/launch
-
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -44,6 +42,9 @@ bindsym $mod+Return exec --no-startup-id st
 
 # start chrome
 bindsym $mod+c exec --no-startup-id chromium 
+
+# start pick emoji
+bindsym $mod+o exec --no-startup-id $HOME/.config/i3/pickemoji.sh
 
 # start music
 bindsym $mod+m exec --no-startup-id netease-cloud-music

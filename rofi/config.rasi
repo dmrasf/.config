@@ -1,9 +1,9 @@
 configuration {
-    modi: "run,window,drun,ssh";
+    modi: "run,window,drun";
     width: 20;
     lines: 5;
 /*	columns: 1;*/
-    font: "SourceCodePro 13";
+    font: "SourceCodePo 10";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -143,4 +143,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "/usr/share/rofi/themes/glue_pro_blue.rasi"
+@import "/usr/share/rofi/themes/dmenu.rasi"

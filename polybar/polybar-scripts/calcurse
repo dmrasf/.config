@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+todo=$(calcurse -t | grep -v 'to do:' | xargs)
+
+[ -n "$todo" ] && echo ✅ $todo
+
+calcurse -d $(date -d tomorrow +'%m/%d/%Y') | grep -v $(date -d tomorrow +'%m/%d/%y') | sed 's/-/⏫/' | xargs
+
+

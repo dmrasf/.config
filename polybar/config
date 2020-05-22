@@ -45,7 +45,7 @@ height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 ; 弧度
-;radius = 6.0
+;radius = 10.0
 ; 固定中心
 fixed-center = false
 
@@ -55,6 +55,8 @@ foreground = ${colors.foreground}
 ; 下面光标的粗细
 line-size = 2
 line-color = {$xrdb:red}
+
+;bottom = true
 
 ; 距离屏幕边界
 border-size = 0
@@ -76,11 +78,11 @@ font-3 = Symbola:pixelsize=9;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = xbacklight pulseaudio wlan filesystem memory cpu battery date powermenu
+modules-right = calcurse corona xbacklight pulseaudio wlan filesystem memory cpu battery date powermenu
 
 tray-position = right
 tray-padding = 2
-tray-background = #458588
+tray-background =#aabd2f00
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -378,5 +380,15 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[module/corona]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/corona.py
+interval = 1000
+
+[module/calcurse]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/calcurse
+interval = 100
 
 ; vim:ft=dosini

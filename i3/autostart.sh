@@ -2,11 +2,12 @@
 
 compton -b &
 redshift -P &
-mpd
-xset -b &
-flameshot &
 /bin/bash /home/dmr/.config/i3/wp-change.sh &
+xset -b &
+xset r rate 210 30 &
 sleep 3
 fcitx &
 sleep 1
 xmodmap ~/.xmodmap &
+flameshot &
+~/.config/polybar/launch &

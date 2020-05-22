@@ -107,8 +107,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: SauceCodePro Nerd Font
-    family: YaHei Consolas Hybrid
+    family: Monaco
 
     # The `style` can be specified to pick a specific face.
     style: Normal
@@ -119,7 +118,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: YaHei Consolas Hybrid
+    family: Monaco
+    #family: YaHei Consolas Hybrid
     #family: SauceCodePro Nerd Font
     #family: Source Code Pro 
 
@@ -132,7 +132,8 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: YaHei Consolas Hybrid
+    family: Monaco
+    #family: YaHei Consolas Hybrid
     #family: SauceCodePro Nerd Font
     #family: Source Code Pro 
 
@@ -145,7 +146,8 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: YaHei Consolas Hybrid
+    family: Monaco
+    #family: YaHei Consolas Hybrid
     #family: SauceCodePro Nerd Font
     #family: Source Code Pro 
 
@@ -153,7 +155,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 8.5
+  size: 7
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

@@ -19,6 +19,7 @@
 /ncmpcpp/error.log
 !/omf/
 !/polybar/
+/polybar/polybar-themes-master
 !/ranger/
 /ranger/plugins/__pycache__/*
 !/redshift/

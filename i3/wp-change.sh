@@ -1,7 +1,7 @@
-#!/bin/bash 
+#!/bin/bash
 
 while true
 do
     feh --randomize --bg-fill ~/.wallpapers/*
-    sleep 5m
+    sleep 2m
 done
