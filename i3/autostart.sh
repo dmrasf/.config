@@ -8,6 +8,6 @@ xset r rate 210 30 &
 sleep 3
 fcitx &
 sleep 1
-xmodmap ~/.xmodmap &
+xmodmap ~/.Xmodmap &
 flameshot &
 ~/.config/polybar/launch &

@@ -1,5 +1,5 @@
 function fish_prompt
-	set -l __last_command_exit_status $status
+    set -l __last_command_exit_status $status
 
     if not set -q -g __fish_robbyrussell_functions_defined
         set -g __fish_robbyrussell_functions_defined
@@ -77,8 +77,9 @@ function fish_prompt
         set -l repo_branch $red(_repo_branch_name $repo_type)
         set repo_info "$blue $repo_type:($repo_branch$blue)"
 
-        if [ (_is_repo_dirty $repo_type) ]
-            set -l dirty "$yellow ✗"
+        set -l dirty (_is_repo_dirty $repo_type)
+        if test -n "$dirty"
+            set -l dirty "$yellow ✗ "
             set repo_info "$repo_info$dirty"
         end
     end
