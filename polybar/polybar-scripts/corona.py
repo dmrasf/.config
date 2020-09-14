@@ -8,6 +8,7 @@ import os
 
 path = '/home/dmr/.cache/corona.json'
 
+
 def isExit():
     """
     function: 判断缓存是否存在且及时
@@ -15,11 +16,13 @@ def isExit():
     """
     if not os.path.exists(path):
         return True
-    filetime = time.strftime('%Y-%m-%d-%H', time.localtime(os.stat(path).st_mtime))
+    filetime = time.strftime(
+        '%Y-%m-%d-%H', time.localtime(os.stat(path).st_mtime))
     today = datetime.datetime.now().strftime('%Y-%m-%d-%H')
     if today.__eq__(filetime):
         return False
     return True
+
 
 def getCase():
     """
@@ -29,13 +32,13 @@ def getCase():
     if isExit():
         url = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5"
         try:
-            r = requests.get(url, timeout = 30)
+            r = requests.get(url, timeout=30)
             r.raise_for_status()
             r.encoding = r.apparent_encoding
             f = open(path, 'w')
             f.write(r.text)
         except:
-            print('没网了, sb')
+            print('oops !!!')
 
     try:
         fp = open(path, 'r')
@@ -46,19 +49,19 @@ def getCase():
     except IOError:
         print()
 
+
 def caseFormat(all):
-    updateTime = all['lastUpdateTime']
+    # updateTime = all['lastUpdateTime']
     chinaTotal = all['chinaTotal']
     chinaAdd = all['chinaAdd']
     nowConfirm = chinaTotal['nowConfirm']
     nowDead = chinaTotal['dead']
-    suspect = chinaTotal['suspect']
+    # suspect = chinaTotal['suspect']
     confirm = chinaAdd['confirm']
     dead = chinaAdd['dead']
     s = '😷 ' + str(nowConfirm) + '(' + '' + str(confirm) + ') '\
-            + '💀 ' + str(nowDead) + '(' + '' + str(dead) + ')'
+        + '💀 ' + str(nowDead) + '(' + '' + str(dead) + ')'
     print(s)
 
 
 getCase()
-

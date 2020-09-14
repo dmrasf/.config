@@ -78,7 +78,7 @@ font-3 = Symbola:pixelsize=9;1
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = calcurse corona xbacklight pulseaudio wlan filesystem memory cpu battery date powermenu
+modules-right = calcurse corona weather xbacklight pulseaudio wlan filesystem memory cpu battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -183,13 +183,6 @@ icon-repeat = 凌
 
 toggle-on-foreground = ${colors.yellow}
 toggle-off-foreground = ${colors.gray}
-
-[module/weather]
-
-type = custom/script
-exec = weather
-interval = 5000
-;format-underline =
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -390,5 +383,10 @@ interval = 1000
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/calcurse
 interval = 100
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/weather/weather.py
+interval = 1000
 
 ; vim:ft=dosini
