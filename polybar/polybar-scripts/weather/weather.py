@@ -33,6 +33,7 @@ def getWeather():
         try:
             f = open(path, 'w')
             f.write(r.text)
+            f.close()
         except:
             print('oops !!!')
     try:
