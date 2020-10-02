@@ -11,3 +11,4 @@ sleep 1
 xmodmap ~/.Xmodmap &
 flameshot &
 ~/.config/polybar/launch &
+dunst &

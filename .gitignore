@@ -23,6 +23,7 @@
 !/ranger/
 /ranger/plugins/__pycache__/*
 !/redshift/
+!/dunst/
 !/rofi/
 !/compton.conf
 !/dmrasf.jpg
