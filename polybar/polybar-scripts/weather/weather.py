@@ -35,41 +35,43 @@ def getWeather():
             f.write(r.text)
             f.close()
         except:
-            print('oops !!!')
+            print('写缓存错误')
     try:
         fp = open(path, 'r')
         text = fp.read()
         fp.close()
         all = json.loads(text)
         caseFormat(all)
-    except IOError:
-        print()
+    except:
+        print('读缓存错误')
 
 
 def caseFormat(all):
-    days = all['result']['result']['daily']
-    night = days[0]['night']
-    day = days[0]['day']
+    try:
+        days = all['result']['result']['daily']
+        night = days[0]['night']
+        day = days[0]['day']
 
-    templow = night['templow']
-    temphigh = day['temphigh']
-    dayWeather = day['weather']
-    # nightWeather = night['weather']
-    # WindPower = day['windpower']
-    # w = {'晴': '', '多云': '', '阴': '', '阵雨': '', '雷阵雨': '',
-    # '雷阵雨伴有冰雹': '', '雨夹雪': '', '小雨': '', '中雨': '',
-    # '大雨': '', '暴雨': '', '大暴雨': '', '特大暴雨': '',
-    # '阵雪': '', '小雪': '', '中雪': '', '大雪': '',
-    # '暴雪': '', '雾': '', '冻雨': '', '沙尘暴': '',
-    # '小雨-中雨': '', '中雨-大雨': '', '大雨-暴雨': '',
-    # '暴雨-大暴雨': '', '大暴雨-特大暴雨': '', '小雪-中雪': '',
-    # '中雪-大雪': '<++>', '大雪-暴雪': '<++>', '浮尘': '<++>',
-    # '扬沙': '<++>', '强沙尘暴': '<++>', '浓雾': '<++>', '强浓雾': '<++>',
-    # '霾': '<++>', '中毒霾': '<++>', '重度霾': '<++>', '严重霾': '<++>',
-    # '大雾': '<++>', '特强浓雾': '<++>', '无': '', '雨': '', '雪': '<++>'}
-
-    Temp = str(templow) + '~' + str(temphigh) + '糖 ' + dayWeather
-    print(Temp)
+        templow = night['templow']
+        temphigh = day['temphigh']
+        dayWeather = day['weather']
+        # nightWeather = night['weather']
+        # WindPower = day['windpower']
+        # w = {'晴': '', '多云': '', '阴': '', '阵雨': '', '雷阵雨': '',
+        # '雷阵雨伴有冰雹': '', '雨夹雪': '', '小雨': '', '中雨': '',
+        # '大雨': '', '暴雨': '', '大暴雨': '', '特大暴雨': '',
+        # '阵雪': '', '小雪': '', '中雪': '', '大雪': '',
+        # '暴雪': '', '雾': '', '冻雨': '', '沙尘暴': '',
+        # '小雨-中雨': '', '中雨-大雨': '', '大雨-暴雨': '',
+        # '暴雨-大暴雨': '', '大暴雨-特大暴雨': '', '小雪-中雪': '',
+        # '中雪-大雪': '<++>', '大雪-暴雪': '<++>', '浮尘': '<++>',
+        # '扬沙': '<++>', '强沙尘暴': '<++>', '浓雾': '<++>', '强浓雾': '<++>',
+        # '霾': '<++>', '中毒霾': '<++>', '重度霾': '<++>', '严重霾': '<++>',
+        # '大雾': '<++>', '特强浓雾': '<++>', '无': '', '雨': '', '雪': '<++>'}
+        Temp = str(templow) + '~' + str(temphigh) + '糖 ' + dayWeather
+        print(Temp)
+    except:
+        print(all['msg'])
 
 
 getWeather()
